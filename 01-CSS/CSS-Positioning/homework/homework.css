@@ -35,12 +35,10 @@ left: 200px;
 
 /* Acá va tu código */
 #ejercicioCuatro {
-position: absolute;
- top: 20px; 
- left: 0px; 
- height: 100; 
- width: 400px;
- padding: 20px;
+position: fixed;
+top: 0px;
+left: 0px;
+height: 110px;
 }
 
 /* Ejercicio 5: */
@@ -48,16 +46,18 @@ position: absolute;
 /* Acá va tu código */
 #ejercicioCinco {
 display: flex;
- flex-direction: column-reverse ;
+ flex-direction: column;
+ align-content: flex-end;
  align-items: center;
+ justify-content: center;
 }
 
 
 
 /* Ejercicio 6. */
 #ejercicioCinco {
-align-self: flex-end;
-align-self: flex-start;
+flex-flow: row-reverse;
+justify-content: space-around;
 
  
 
