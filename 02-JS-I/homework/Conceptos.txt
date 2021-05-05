@@ -1,0 +1,90 @@
+-VARIABLES.
+Las variables en los lenguajes de programación siguen una lógica similar a las variables utilizadas en otros ámbitos como las matemáticas.
+Las variables en JavaScript se crean mediante la palabra reservada var. De esta forma, el ejemplo anterior se puede realizar en JavaScript de la siguiente manera:
+var numero_1 = 3;
+var numero_2 = 1;
+var resultado = numero_1 + numero_2;
+
+-STRINGS.
+String es una clase en JavaScript que se usa para manipular cadenas de caracteres. En JavaScript todo texto encerrado entre comillas, dobles o simples, se interpreta como una cadena, así '45' no es el número cuarenta y cinco sino la cadena formada por los caracteres 4 y 5.
+
+El objeto String permite realizar operaciones con cadenas como concatenar o dividir cadenas, buscar texto, extraer parte de un texto, etc... La operación de crear una variable de este tipo se lleva a cabo como es habitual con el operador new pudiéndole pasar un argumento para inicializar la variable. Al usar un método o referirnos a una propiedad podemos usar el nombre de la variable o una constante de cadena.
+Ejemplo:
+
+var mitexto = "Esta es una cadena";
+
+var pos = mitexto.indexOf("una");
+
+Puede también escribirse en la siguiente forma:
+
+var pos = "Esta es una cadena".indexOf("una");
+
+En versiones de Javascript 1.0 no funcionará new para crear los Strings.
+
+-FUNCIONES (argumentos, return).
+Una función JavaScript puede devolver un resultado si se introduce la sentencia return resultado; donde resultado es aquello que queremos devolver (normalmente una variable que contiene un valor numérico, de texto o booleano, pero también podrían ser objetos con mayor complejidad como un array).
+Una vez se llega a la sentencia return se produce la devolución del resultado y se interrumpe la ejecución de la función. Por ello la sentencia return será normalmente la última instrucción dentro de una función.
+
+Definición de una función sin parámetros que devuelve un resultado:
+//Comentario descriptivo de qué hace la función
+
+        function nombreDeLaFunción () {     
+
+//Código de la función
+
+return resultado;
+
+}
+
+Definición de una función con parámetros que devuelve un resultado:
+//Comentario descriptivo de qué hace la función
+
+        function nombreDeLaFunción (param1, param2, …, paramN) {     
+
+//Código de la función
+
+return resultado;
+
+}
+
+-DECLARACIONES (IF)
+IF es una estructura de control utilizada para tomar decisiones. Es un condicional que sirve para realizar unas u otras operaciones en función de una expresión. Funciona de la siguiente manera, primero se evalúa una expresión, si da resultado positivo se realizan las acciones relacionadas con el caso positivo.
+La sintaxis de la estructura IF es la siguiente.
+
+Nota: Todas las estructuras de control se escriben en minúsculas en Javascript. Aunque algunas veces para destacar el nombre de la estructura la podamos escribir en el texto del manual con letras mayúsculas, en el código de nuestros scripts siempre tenemos que ponerlo en minúsculas. En caso contrario recibiremos un mensaje de error.
+if (expresión) { 
+   //acciones a realizar en caso positivo 
+   //... 
+}
+
+Opcionalmente se pueden indicar acciones a realizar en caso de que la evaluación de la sentencia devuelva resultados negativos.
+
+if (expresión) { 
+   //acciones a realizar en caso positivo 
+   //... 
+} else { 
+   //acciones a realizar en caso negativo 
+   //... 
+}
+
+Fijémonos en varias cosas. Para empezar vemos como con unas llaves engloban las acciones que queremos realizar en caso de que se cumplan o no las expresiones. Estas llaves han de colocarse siempre, excepto en el caso de que sólo haya una instrucción como acciones a realizar, que son opcionales.
+
+Nota: Aunque las llaves para englobar las sentencias a ejecutar tanto en el caso positivo como negativo sean opcionales cuando queremos ejecutar una única sentencia, la recomendación es colocarlas siempre, porque obtendremos así un código fuente más claro. Por ejemplo:
+
+if (llueve)
+   alert("Cae agua");
+Sería exactamente igual que este código:
+if (llueve){
+   alert("Cae agua");
+}
+O incluso, igual a este otro:
+if (llueve) alert("Cae agua");
+
+Sin embargo, cuando utilizamos las llaves, el código queda bastante más claro, porque se puede apreciar en un rápido vistazo qué instrucciones están dependiendo del caso positivo del if. Esto es un detalle que ahora quizás no tenga mucha importancia, pero que se agradecerá cuando el programa sea más complejo o cuando varios programadores se encarguen de tocar un mismo código.
+
+-VALORES BOOLEANO (true, false).
+En JavaScript una variable es booleana si se le asigna como contenido true ó false. Estas variables se usan para almacenar información del tipo sí / no, cumple / no cumple, verdadero / falso, existe / no existe, es decir, información que únicamente puede tener dos estados.
+
+Ejemplo: var casado = true;
+
+true y false son palabras clave JavaScript. Por tanto no podemos usarlas como nombres de variables. Si escribiéramos true = 25; el intérprete del navegador interpretaría que existe un error, por lo que el código JavaScript no se ejecutará (sin embargo, no veremos ningún mensaje de error, simplemente veremos que JavaScript no funciona).
