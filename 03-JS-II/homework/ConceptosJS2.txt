@@ -1,0 +1,55 @@
+-FOR
+Crea un bucle que consiste en tres expresiones opcionales, encerradas en paréntesis y separadas por puntos y comas, seguidas de una sentencia ejecutada en un bucle.
+Sintaxis:
+for ([expresion-inicial]; [condicion]; [expresion-final])sentencia
+
+-&& (AND)
+El && operador lógico AND ( ) (conjunción lógica) para un conjunto de operandos es verdadero si y solo si todos sus operandos son verdaderos. Normalmente se utiliza con Booleanvalores (lógicos). Cuando lo es, devuelve un valor booleano. Sin embargo, el &&operador en realidad devuelve el valor de uno de los operandos especificados, por lo que si este operador se usa con valores no booleanos, devolverá un valor no booleano
+const a = 3;
+const b = -2;
+
+console.log(a > 0 && b > 0);
+// expected output: false
+
+Sintaxis
+expr1 && expr2
+
+-|| (OR)
+El ||operador lógico OR ( ) (disyunción lógica) para un conjunto de operandos es verdadero si y solo si uno o más de sus operandos es verdadero. Normalmente se utiliza con Booleanvalores (lógicos). Cuando lo es, devuelve un valor booleano. Sin embargo, el ||operador en realidad devuelve el valor de uno de los operandos especificados, por lo que si este operador se usa con valores no booleanos, devolverá un valor no booleano.
+
+const a = 3;
+const b = -2;
+
+console.log(a > 0 || b > 0);
+// expected output: true
+
+Sintaxis
+expr1 || expr2
+
+-! (NOT)
+El operador booleano NOT se representa con un signo de exclamación !.
+
+La sintaxis es bastante simple:
+
+result = !value;
+El operador acepta un solo argumento y realiza lo siguiente:
+
+1.Convierte el operando al tipo booleano: true/false.
+2.Retorna el valor contrario.
+
+Por ejemplo:
+
+alert(!true); // false
+alert(!0); // true
+
+Un doble NOT !! es a veces usado para convertir un valor al tipo booleano:
+
+alert(!!"cadena de texto no vacía"); // true
+alert(!!null); // false
+Eso es, el primer NOT convierte el valor a booleano y retorna el inverso, y el segundo NOT lo invierte de nuevo. Al final, tenemos una simple conversión a booleano.
+
+Hay una manera un poco mas prolija de realizar lo mismo – una función integrada Boolean:
+
+alert(Boolean("cadena de texto no vacía")); // true
+alert(Boolean(null)); // false
+La precedencia de NOT ! es la mayor de todos los operadores lógicos, así que siempre se ejecuta primero, antes que && o ||.
