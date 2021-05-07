@@ -72,19 +72,19 @@ function colors(color) {
   //Usar el statement Switch.
   switch (color) {
     case "blue":
-    return "This is blue"
+    return "This is blue";
     
     case "red":
-    return "This is red"
+    return "This is red";
     
     case "green":
-    return "This is green"
+    return "This is green";
     
     case "orange":
-    return "This is orange"
+    return "This is orange";
     
     default:
-    return "Color not found"
+    return "Color not found";
    }
 }
 
@@ -92,7 +92,9 @@ function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
-  return numero === 10 || numero === 5;
+  if (numero === 10 || numero === 5)
+  return true;
+  else return false;
 
 }
 
@@ -100,7 +102,9 @@ function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
-  return numero < 50 && numero > 20;
+  if (numero < 50 && numero > 20)
+  return true;
+  else return false;
 }
 
 function esEntero(numero) {
@@ -111,7 +115,9 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
-  return numero % 1 === 0;
+  if (numero - Math.floor (numero) === 0)
+  return true;
+  else return false;
 }
 
 function fizzBuzz(numero) {
@@ -188,13 +194,11 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí
-  let arrayTablaDel6 = []
-  for(let i = 0; i < 11; i++){
-arrayTablaDel6.push (6 * i)
-
-  } 
-  return arrayTablaDel6;
-  
+  var array = []
+  for (var i = 0; i <= 10; i++){
+    array [i] = 6 * i;
+  }
+  return array;
 }
 
 function tieneTresDigitos(numero){
@@ -203,7 +207,7 @@ function tieneTresDigitos(numero){
   if(numero > 10 && numero < 5000) {
     return true;
   }
-  return false;
+   else return false;
   
 }
 
@@ -211,14 +215,14 @@ function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
-  var a = numero;
-  var i = 0;
+  var i = 1;
   do {
-    i = i + 1;
-    a = a + 5;
+    numero = numero + 5;
+    i ++;
   }
-  while(i < 8);
-  return a;
+  while(i <= 8)
+  return numero;
+  
 }
 
 
