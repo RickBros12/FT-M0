@@ -1,0 +1,101 @@
+-OBJETOS:
+En JavaScript, los objetos son básicamente tablas hash, esto es, un grupo de propiedades y funciones que pueden ser accedidos a través de una clave. Tanto las propiedades como los métodos (que no son más que propiedades cuyo valor es una función) pueden ser creados dinámicamente en tiempo de ejecución.
+
+La manera más simple de construir un objeto en JavaScript, es declarar una nueva variable de tipo Object y asignarle las propiedades o métodos que el objeto necesite:
+
+var obj = new Object();
+obj.foo = "bar";
+obj.hello = function() { console.log("Hello world!"); }
+
+Existe una manera más rápida (en términos de caracteres), de crear un objeto utilizando la denominada notación literal. Esta representación consiste en asignar a una variable una pareja de llaves ({ }) para crear un objeto vacío, y asignar las propiedades y métodos de la misma manera que en el ejemplo anterior:
+
+var obj   = {};
+obj.foo   = "bar";
+obj.hello = function() { console.log("Hello world!"); }
+ 
+var obj = {
+    "foo"   : "bar",
+    "hello" : function() { console.log("Hello world!"); }
+};
+
+-PROPIEDADES:
+JavaScript está diseñado en un paradigma simple basado en objetos. Un objeto es una colección de propiedades, y una propiedad es una asociación entre un nombre (o clave) y un valor. El valor de una propiedad puede ser una función, en cuyo caso la propiedad es conocida como un método.
+
+Un objeto de JavaScript tiene propiedades asociadas a él. Una propiedad de un objeto se puede explicar como una variable adjunta al objeto. Las propiedades de un objeto básicamente son lo mismo que las variables comunes de JavaScript, excepto por el nexo con el objeto. Las propiedades de un objeto definen las características del objeto. Accedes a las propiedades de un objeto con una simple notación de puntos:
+
+objectName.propertyName
+
+Como todas las variables de JavaScript, tanto el nombre del objeto (que puede ser una variable normal) como el nombre de la propiedad son sensibles a mayúsculas y minúsculas. Puedes definir propiedades asignándoles un valor. Por ejemplo, vamos a crear un objeto llamado myCar y le vamos a asignar propiedades denominadas make, model, y year de la siguiente manera:
+
+var myCar = new Object();
+myCar.make = 'Ford';
+myCar.model = 'Mustang';
+myCar.year = 1969;
+
+-METODOS:
+Un método es una función asociada a un objeto, o, simplemente, un método es una propiedad de un objeto que es una función. Los métodos se definen normalmente como una función, con excepción de que tienen que ser asignados como la propiedad de un objeto.
+Un ejemplo puede ser:
+
+objectName.methodname = functionName;
+
+var myObj = {
+  myMethod: function(params) {
+    // ...hacer algo
+  }
+
+  // O ESTO TAMBIÉN FUNCIONA
+
+  myOtherMethod(params) {
+    // ...hacer algo más
+  }
+};
+
+<s0>donde objectName es un objeto existente, methodname es el nombre que se le va a asignar al método, y functionName es el nombre de la función.
+
+Entonces puedes llamar al método en el contexto del objeto de la siguiente manera:
+
+object.methodname(params);
+
+Puedes definir métodos para un tipo de objeto incluyendo una definición del método en la función constructora del objeto. Podrías definir una función que formateé y muestre las propiedades de los objetos del tipo Car previamente definidas; por ejemplo:
+
+function displayCar() {
+  var result = `Un hermoso ${this.year} ${this.make} ${this.model}`;
+  pretty_print(result);
+}
+
+- BUCLE for...in:
+La instrucción for-in itera sobre todas las propiedades enumerables de un objeto que está codificado por cadenas (ignorando los codificados por Símbolos, incluidas las propiedades enumerables heredadas.
+
+Sintaxis
+
+for (variable in objeto)
+  instrucción
+
+variable
+Asigna un nombre de propiedad diferente a la variable en cada iteración.
+objeto
+Objeto cuyas propiedades enumerables que no son símbolos se iteran.
+
+Un bucle for...in solo itera sobre propiedades enumerables que no son símbolo. Los objetos creados a partir de constructores integrados como Array y Object han heredado propiedades no enumerables de Object.prototype y String.prototype, como el método indexOf() de String o el método toString() de Object. El bucle iterará sobre todas las propiedades enumerables del objeto en sí y aquellas que el objeto hereda de su cadena de prototipos (las propiedades de los prototipos más cercanos tienen prioridad sobre las de los prototipos más alejados del objeto en su cadena de prototipos).
+
+-Notación de puntos vs notación de corchetes:
+
+*Notación por punto
+
+get = objeto.propiedad;
+objeto.propiedad = set;
+propiedad debe ser un identificador válido de JavaScript, esto es, una secuencia alfanumérica de caracteres, incluyendo también el guión bajo ("_") y el signo dolar ("$"), que no puede comenzar por un número. Por ejemplo, objeto.$1 es válido, mientras que objeto.1 no lo es.
+
+Ejemplo:
+document.createElement('pre');
+
+Aquí, el método llamado "createElement" se recupera de document y se le llama.
+
+*Notación por corchetes
+
+get = objeto[nombre_propiedad];
+objeto[nombre_propiedad] = set;
+nombre_propiedad es una cadena. La cadena no tiene que ser un identificador válido; puede tener cualquier valor, por ejemplo "1foo", "!bar!", o incluso " " (un espacio).
+
+Ejemplo:
+document['createElement']('pre');
